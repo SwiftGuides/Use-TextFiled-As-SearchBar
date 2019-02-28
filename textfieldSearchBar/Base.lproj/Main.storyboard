@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="textfieldSearchBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E3E-J6-ZzV">
+                                <rect key="frame" x="45" y="142" width="230" height="378"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="2J3-T8-rrF"/>
+                                    <constraint firstAttribute="height" constant="378" id="fVE-OW-oxk"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchTableViewCell" id="JaL-mE-ARw" customClass="searchTableViewCell" customModule="textfieldSearchBar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="230" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JaL-mE-ARw" id="hIf-RW-iuF">
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeZ-6j-0s7">
+                                                    <rect key="frame" x="25" y="11" width="180" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eeZ-6j-0s7" secondAttribute="bottom" constant="1" id="1XV-6h-fbH"/>
+                                                <constraint firstItem="eeZ-6j-0s7" firstAttribute="top" secondItem="hIf-RW-iuF" secondAttribute="topMargin" id="7C7-Ut-O5s"/>
+                                                <constraint firstItem="eeZ-6j-0s7" firstAttribute="leading" secondItem="hIf-RW-iuF" secondAttribute="leadingMargin" constant="10" id="NpH-Qc-VPh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eeZ-6j-0s7" secondAttribute="trailing" constant="10" id="Yth-ls-AYp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textlabelSearch" destination="eeZ-6j-0s7" id="ijz-5q-Sse"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="XO1-8f-unV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I2P-Ui-B7n"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcr-Zg-q8i">
+                                <rect key="frame" x="129" y="104" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E2g-UF-eav"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-br-nRl">
+                                <rect key="frame" x="20.5" y="67" width="279" height="30"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="1Jh-L8-UPT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E3E-J6-ZzV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ym-TV-18l"/>
+                            <constraint firstItem="jbf-br-nRl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SoG-2n-bNC"/>
+                            <constraint firstItem="E3E-J6-ZzV" firstAttribute="top" secondItem="jbf-br-nRl" secondAttribute="bottom" constant="45" id="fpn-6L-dLT"/>
+                            <constraint firstItem="jbf-br-nRl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="jFN-3j-L3d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tblView" destination="E3E-J6-ZzV" id="kzm-lb-Rpw"/>
+                        <outlet property="txtSearchBar" destination="jbf-br-nRl" id="Ai4-oa-1kX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.125" y="115.14084507042254"/>
+        </scene>
+    </scenes>
+</document>
